@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Modal } from 'react-native'
 import DebugConfig from '../../App/Config/DebugConfig'
 import RoundedButton from '../../App/Components/RoundedButton'
-import PresentationScreen from './PresentationScreen'
+import SwipingScreen from './SwipingScreen'
 
 export default class DevscreensButton extends React.Component {
   constructor (props) {
@@ -17,21 +17,17 @@ export default class DevscreensButton extends React.Component {
   }
 
   render () {
-    if (DebugConfig.showDevScreens) {
       return (
         <View>
           <RoundedButton onPress={this.toggleModal}>
-            Open DevScreens
+            Test Login
           </RoundedButton>
           <Modal
             visible={this.state.showModal}
             onRequestClose={this.toggleModal}>
-            <PresentationScreen screenProps={{ toggle: this.toggleModal }} />
+            <SwipingScreen screenProps={{ toggle: this.toggleModal }} />
           </Modal>
         </View>
       )
-    } else {
-      return <View />
-    }
   }
 }

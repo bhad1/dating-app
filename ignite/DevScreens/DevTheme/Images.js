@@ -3,6 +3,8 @@ const images = {
   igniteClear: require('../Images/ignite-logo-transparent.png'),
   tileBg: require('../Images/tile_bg.png'),
   background: require('../Images/BG.png'),
+  datingProfileImage: require('../Images/datingAppImage.jpg'),
+  myDatingProfileImage: require('../Images/myDatingProfileImage.jpg'),
   api: require('../Images/Icons/icon-api-testing.png'),
   components: require('../Images/Icons/icon-components.png'),
   deviceInfo: require('../Images/Icons/icon-device-information.png'),
