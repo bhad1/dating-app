@@ -5,7 +5,8 @@ export default StyleSheet.create({
   TopNavBarContainer: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    paddingBottom: 5
   },
   leftTopNavBar: {
     flex: 1,

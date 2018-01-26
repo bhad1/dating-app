@@ -7,7 +7,7 @@ import { StackNavigator } from 'react-navigation'
 import APITestingScreen from './APITestingScreen'
 import ComponentExamplesScreen from './ComponentExamplesScreen'
 import DeviceInfoScreen from './DeviceInfoScreen'
-import PluginExamplesScreen from './PluginExamplesScreen'
+import MatchesScreen from './MatchesScreen'
 import ThemeScreen from './ThemeScreen'
 import FaqScreen from './FaqScreen'
 import TopNavBar from '../../App/Components/TopNavBar.js'
@@ -18,13 +18,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './Styles/SwipingScreenStyles'
 import styles2 from '../../App/Themes/ApplicationStyles'
 
-class PresentationScreen extends React.Component {
-  openComponents = () => {
+class SwipingScreen extends React.Component {
+  openSettings = () => {
     this.props.navigation.navigate('ComponentExamplesScreen')
   }
 
-  openUsage = () => {
-    this.props.navigation.navigate('PluginExamplesScreen')
+  openMatches = () => {
+    this.props.navigation.navigate('MatchesScreen')
   }
 
   openApi = () => {
@@ -46,7 +46,7 @@ class PresentationScreen extends React.Component {
   render () {
     return (
       <View style={styles.SwipingScreenContainer}>
-        <TopNavBar style={styles.TopNavBar} />
+        <TopNavBar navigation={this.props.navigation} style={styles.TopNavBar} leftIcon='cog' middleText="Basic Meet" rightIcon='comment' />
 
         <View style={styles.ProfileImageSection}>
           <View style={styles.ProfileImageContainer}>
@@ -58,59 +58,17 @@ class PresentationScreen extends React.Component {
 
         </View>
 
-
-
-
-
-
-
-
-
-        {/*<Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />*/}
-        {/*<TouchableOpacity onPress={this.props.screenProps.toggle} style={{*/}
-          {/*position: 'absolute',*/}
-          {/*paddingTop: 30,*/}
-          {/*paddingHorizontal: 10,*/}
-          {/*zIndex: 10*/}
-        {/*}}>*/}
-          {/*<Image source={Images.closeButton} />*/}
-        {/*</TouchableOpacity>*/}
-        {/*<ScrollView showsVerticalScrollIndicator={false} bounces={false} style={styles.container}>*/}
-          {/*<View style={styles.centered}>*/}
-            {/*<Image source={Images.igniteClear} style={styles.logo} />*/}
-          {/*</View>*/}
-
-          {/*<Text style={styles.sectionText}>*/}
-            {/*Default screens for development, debugging, and alpha testing*/}
-            {/*are available below.*/}
-          {/*</Text>*/}
-          {/*<View style={styles.buttonsContainer}>*/}
-            {/*<ButtonBox onPress={this.openComponents} style={styles.componentButton} image={Images.components} text='Components' />*/}
-            {/*<ButtonBox onPress={this.openUsage} style={styles.usageButton} image={Images.usageExamples} text='Plugin Examples' />*/}
-          {/*</View>*/}
-          {/*<View style={styles.buttonsContainer}>*/}
-            {/*<ButtonBox onPress={this.openApi} style={styles.apiButton} image={Images.api} text='API Testing' />*/}
-            {/*<ButtonBox onPress={this.openTheme} image={Images.theme} text='Theme' />*/}
-          {/*</View>*/}
-          {/*<View style={styles.buttonsContainer}>*/}
-            {/*<ButtonBox onPress={this.openDevice} style={styles.deviceButton} image={Images.deviceInfo} text='Device Info' />*/}
-            {/*<ButtonBox onPress={this.openFaq} style={styles.usageButton} image={Images.faq} text='FAQ' />*/}
-          {/*</View>*/}
-        {/*</ScrollView>*/}
-        {/*<View style={styles.banner}>*/}
-          {/*<Text style={styles.bannerLabel}>Made with ❤️ by Infinite Red</Text>*/}
-        {/*</View>*/}
       </View>
     )
   }
 }
 
 export default StackNavigator({
-  PresentationScreen: {screen: PresentationScreen},
+  SwipingScreen: {screen: SwipingScreen},
   APITestingScreen: {screen: APITestingScreen},
   ComponentExamplesScreen: {screen: ComponentExamplesScreen},
   DeviceInfoScreen: {screen: DeviceInfoScreen},
-  PluginExamplesScreen: {screen: PluginExamplesScreen},
+  MatchesScreen: {screen: MatchesScreen},
   ThemeScreen: {screen: ThemeScreen},
   FaqScreen: {screen: FaqScreen}
 }, {
@@ -118,7 +76,7 @@ export default StackNavigator({
     // opacity: 1,
     // backgroundColor: '#3e243f'
   },
-  initialRouteName: 'PresentationScreen',
+  initialRouteName: 'SwipingScreen',
   headerMode: 'none',
   // Keeping this here for future when we can make
   navigationOptions: {

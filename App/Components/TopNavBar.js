@@ -1,27 +1,57 @@
 /**
  * Created by bhadaway on 1/18/18.
  */
-import React, { Component } from 'react'
-import { Text, View} from 'react-native'
+import React, {Component} from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
-
+// An All Components Screen is a great way to dev and quick-test components
+import { Platform, View, ScrollView, Text, Image, TouchableOpacity } from 'react-native'
 //styles
 import styles from './Styles/TopNavBarStyles'
+import TouchableItem from "react-navigation/src/views/TouchableItem";
 
 export default class TopNavBar extends Component {
 
-  render () {
+  render() {
+    let leftIcon = this.props.leftIcon;
+    let leftIconJSX;
+    let middleText = this.props.middleText;
+    let rightIcon = this.props.rightIcon;
+    let rightIconJSX;
+
+    let RenderLeftIconJSX = () => {
+      switch (leftIcon) {
+        case 'chevron-left':
+          return <TouchableItem onPress={this.props.goBack}><Icon name='chevron-left' style={styles.leftTopNavBarIcon} size={23} color='black'/></TouchableItem>;
+          break;
+        case 'cog':
+          return <TouchableItem onPress={() => this.props.navigation.navigate('ComponentExamplesScreen')} ><Icon name='cog' style={styles.leftTopNavBarIcon} size={23} color='black'/></TouchableItem>;
+          break;
+        default:
+          return <View></View>;
+      }
+    }
+
+    let RenderRightIconJSX = () => {
+      switch (rightIcon) {
+        case 'comment':
+          return <TouchableItem onPress={() => this.props.navigation.navigate('MatchesScreen')}><Icon name='comment' style={styles.rightTopNavBarIcon} size={23} color='black'/></TouchableItem>;
+          break;
+        default:
+          return <View></View>;
+      }
+    }
+
 
     return (
       <View style={styles.TopNavBarContainer}>
         <View style={styles.leftTopNavBar}>
-          <Icon name='cog' style={styles.leftTopNavBarIcon} size={23} color='black' />
+          <RenderLeftIconJSX />
         </View>
         <View style={styles.middleTopNavBar}>
-          <Text style={styles.middleTopNavBarText}>Harmony</Text>
+          <Text style={styles.middleTopNavBarText}>{middleText}</Text>
         </View>
         <View style={styles.rightTopNavBar}>
-          <Icon name='comment' style={styles.rightTopNavBarIcon} size={23} color='black' />
+          <RenderRightIconJSX />
         </View>
       </View>
     )
