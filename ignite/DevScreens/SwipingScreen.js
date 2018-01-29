@@ -12,7 +12,10 @@ import ThemeScreen from './ThemeScreen'
 import FaqScreen from './FaqScreen'
 import TopNavBar from '../../App/Components/TopNavBar.js'
 import ProfileSummary from '../../App/Components/ProfileSummary'
+import MessageScreen from './MessageScreen'
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import Swiper from 'react-native-swiper';
 
 // Styles
 import styles from './Styles/SwipingScreenStyles'
@@ -46,11 +49,21 @@ class SwipingScreen extends React.Component {
   render () {
     return (
       <View style={styles.SwipingScreenContainer}>
-        <TopNavBar navigation={this.props.navigation} style={styles.TopNavBar} leftIcon='cog' middleText="Basic Meet" rightIcon='comment' />
+        <TopNavBar navigation={this.props.navigation} style={styles.TopNavBar} leftIcon='cog' middleText="App" rightIcon='comment' />
 
         <View style={styles.ProfileImageSection}>
           <View style={styles.ProfileImageContainer}>
-            <Image source={Images.myDatingProfileImage} style={styles.SwipePicture} resizeMode='stretch' />
+            <Swiper style={styles.wrapper} horizontal={false}>
+              <View style={styles.slide1}>
+                <Image source={Images.myDatingProfileImage} style={styles.SwipePicture} resizeMode='stretch' />
+              </View>
+              <View style={styles.slide2}>
+                <Image source={Images.datingProfileImage} style={styles.SwipePicture} resizeMode='stretch' />
+              </View>
+              <View style={styles.slide3}>
+                <Image source={Images.myDatingProfileImage} style={styles.SwipePicture} resizeMode='stretch' />
+              </View>
+            </Swiper>
             <View style={styles.ProfileSummaryContainer}>
               <ProfileSummary/>
             </View>
@@ -65,6 +78,7 @@ class SwipingScreen extends React.Component {
 
 export default StackNavigator({
   SwipingScreen: {screen: SwipingScreen},
+  MessageScreen: {screen: MessageScreen},
   APITestingScreen: {screen: APITestingScreen},
   ComponentExamplesScreen: {screen: ComponentExamplesScreen},
   DeviceInfoScreen: {screen: DeviceInfoScreen},

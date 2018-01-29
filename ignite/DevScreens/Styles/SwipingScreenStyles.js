@@ -36,6 +36,31 @@ export default StyleSheet.create({
     height: 85,
     width: 330,
     borderRadius: 6,
+  },
+  wrapper: {
+  },
+  slide1: {
+    flex: 1,
+    borderRadius: 6,
+    width: 'auto'
+    // backgroundColor: '#9DD6EB',
+  },
+  slide2: {
+    flex: 1,
+    borderRadius: 6,
+    width: 'auto'
+    // backgroundColor: '#97CAE5',
+  },
+  slide3: {
+    flex: 1,
+    borderRadius: 6,
+    width: 'auto'
+    // backgroundColor: '#92BBD9',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
   }
 
 })

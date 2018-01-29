@@ -6,6 +6,8 @@ import TopNavBar from '../../App/Components/TopNavBar.js'
 
 import { Images } from './DevTheme'
 
+import TouchableItem from "react-navigation/src/views/TouchableItem";
+
 // Styles
 import styles from './Styles/MatchesScreenStyles'
 
@@ -29,7 +31,7 @@ class MatchesScreen extends React.Component {
 
           {/* just container for title of section*/}
           <View style={styles.MatchesTextContainer}>
-            <Text style={styles.MatchesText}>M' Ladies <Text>{this.numberOfExpiringConnections}</Text></Text>
+            <Text style={styles.MatchesText}>Expiring Connections <Text>{this.numberOfExpiringConnections}</Text></Text>
           </View>
           {/* end title section*/}
 
@@ -89,13 +91,13 @@ class MatchesScreen extends React.Component {
 
            {/*section for title, title text is 'conversations'*/}
           <View style={styles.ConversationsTextContainer}>
-            <Text style={styles.ConversationsText}>Tip'd chivalry t' ya</Text>
+            <Text style={styles.ConversationsText}>Messages</Text>
           </View>
            {/*end title section*/}
 
           <View style={styles.MessagesScrollViewContainer}>
             <ScrollView>
-              <View style={styles.MessageContainer}>
+              <TouchableItem onPress={() => this.props.navigation.navigate('MessageScreen')} style={styles.MessageContainer}>
                 <View style={styles.MessageProfilePictureContainer}>
                   <Image source={Images.datingProfileImage} style={styles.MessagesMatchPicture} resizeMode='stretch' />
                 </View>
@@ -110,7 +112,7 @@ class MatchesScreen extends React.Component {
                     <Text style={styles.MessageText} ellipsizeMode='tail' numberOfLines={3}>Hey :) This is kind of weird but I guess Ill go ahead and ask. Why do you have 2 computers? Hey :) This is kind of weird but I guess Ill go ahead and ask. Why do you have 2 computers? Hey :) This is kind of weird but I guess Ill go ahead and ask. Why do you have 2 computers? Hey :) This is kind of weird but I guess Ill go ahead and ask. Why do you have 2 computers?</Text>
                   </View>
                 </View>
-              </View>
+              </TouchableItem>
               <View style={styles.MessageContainer}>
                 <View style={styles.MessageProfilePictureContainer}>
                   <Image source={Images.datingProfileImage} style={styles.MessagesMatchPicture} resizeMode='stretch' />
