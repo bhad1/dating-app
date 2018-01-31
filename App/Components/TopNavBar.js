@@ -24,7 +24,7 @@ export default class TopNavBar extends Component {
           return <TouchableItem onPress={this.props.goBack}><Icon name='chevron-left' style={styles.leftTopNavBarIcon} size={23} color='black'/></TouchableItem>;
           break;
         case 'cog':
-          return <TouchableItem onPress={() => this.props.navigation.navigate('ComponentExamplesScreen')} ><Icon name='cog' style={styles.leftTopNavBarIcon} size={23} color='black'/></TouchableItem>;
+          return <TouchableItem onPress={() => this.props.navigation.navigate('MyProfileScreen')} ><Icon name='cog' style={styles.leftTopNavBarIcon} size={23} color='black'/></TouchableItem>;
           break;
         default:
           return <View></View>;

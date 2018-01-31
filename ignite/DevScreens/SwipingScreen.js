@@ -8,6 +8,7 @@ import APITestingScreen from './APITestingScreen'
 import ComponentExamplesScreen from './ComponentExamplesScreen'
 import DeviceInfoScreen from './DeviceInfoScreen'
 import MatchesScreen from './MatchesScreen'
+import MyProfileScreen from './ProfileScreen'
 import ThemeScreen from './ThemeScreen'
 import FaqScreen from './FaqScreen'
 import TopNavBar from '../../App/Components/TopNavBar.js'
@@ -79,6 +80,7 @@ class SwipingScreen extends React.Component {
 export default StackNavigator({
   SwipingScreen: {screen: SwipingScreen},
   MessageScreen: {screen: MessageScreen},
+  MyProfileScreen: {screen: MyProfileScreen},
   APITestingScreen: {screen: APITestingScreen},
   ComponentExamplesScreen: {screen: ComponentExamplesScreen},
   DeviceInfoScreen: {screen: DeviceInfoScreen},

@@ -18,8 +18,8 @@ export default class ProfileSummary extends Component {
           <Text style={styles.ProfileSummaryName}>Bryan
             <Text style={styles.ProfileSummaryAge}>, 24</Text>
           </Text>
-          <Text style={styles.ProfileSummaryJob}>Stand up comedian at AMY SHUME</Text>
-          <Text style={styles.ProfileSummaryUniversity}>University of AMY</Text>
+          <Text style={styles.ProfileSummaryJob}>Plumbing analyst at PLUM</Text>
+          <Text style={styles.ProfileSummaryUniversity}>University of WAE</Text>
         </View>
       </View>
     )
